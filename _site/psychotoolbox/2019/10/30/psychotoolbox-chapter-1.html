@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Chapter1: Matlab 概述和编程基础 | Lu Nie Blog</title>
+<meta name="generator" content="Jekyll v3.9.1" />
+<meta property="og:title" content="Chapter1: Matlab 概述和编程基础" />
+<meta name="author" content="Lu Nie" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="本系列旨在整理Matlab在认知神经科学中的应用" />
+<meta property="og:description" content="本系列旨在整理Matlab在认知神经科学中的应用" />
+<link rel="canonical" href="http://localhost:4000/psychotoolbox/2019/10/30/psychotoolbox-chapter-1.html" />
+<meta property="og:url" content="http://localhost:4000/psychotoolbox/2019/10/30/psychotoolbox-chapter-1.html" />
+<meta property="og:site_name" content="Lu Nie Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-10-30T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Chapter1: Matlab 概述和编程基础" />
+<script type="application/ld+json">
+{"datePublished":"2019-10-30T00:00:00+08:00","description":"本系列旨在整理Matlab在认知神经科学中的应用","dateModified":"2019-10-30T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/psychotoolbox/2019/10/30/psychotoolbox-chapter-1.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"},"name":"Lu Nie"},"url":"http://localhost:4000/psychotoolbox/2019/10/30/psychotoolbox-chapter-1.html","author":{"@type":"Person","name":"Lu Nie"},"@type":"BlogPosting","headline":"Chapter1: Matlab 概述和编程基础","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Lu Nie Blog" />
+
+
+
+
+
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans|Roboto|Roboto%20Slab|Inconsolata|Dancing%20Script|Noto%20Sans%20SC|Noto%20Sans%20TC|Noto%20Serif%20SC|Noto%20Serif%20TC|Ma%20Shan%20Zheng">
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/skin.css">
+
+<!-- Begin selecting skin -->
+
+<!-- End selecting skin -->
+
+<script async src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+
+
+  </head>
+
+  <body>
+    <div class="site-container">
+      <header class="site-header">
+        <div class="wrapper">
+  <script>
+    function clickSidebarButton() {
+      const elem = document.getElementById("site-sidebar")
+      if (elem.style.display == "none" || elem.style.display == "") {
+        elem.style.display = "block";
+      } else {
+        elem.style.display = "none";
+      }
+    }
+  </script>
+  <a class="site-sidebar-button" onclick="clickSidebarButton()"><i class="far fa-user"></i>
+  </a>
+
+  <a class="site-title" rel="author" href="/">Lu Nie Blog</a>
+
+  
+    <nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger" title="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+          </svg>
+        </span>
+      </label>
+
+      <ul class="trigger">
+              <li><a class="" href="/about/">About</a></li>
+            
+              <li><a class="" href="/years/">Years</a></li>
+            
+              <li><a class="" href="/categories/">Categories</a></li>
+            
+              <li><a class="" href="/tags/">Tags</a></li>
+            
+              <li class="dropdown" href="#">
+                <a href="javascript:void(0)" class="dropbtn">Projects</a>
+                <div class="dropdown-content">
+                    <a class="" href="/workingmemory/">WorkingMemory</a>
+                    <a class="" href="/anhedonia/">Anhedonia</a>
+                </div>
+              </li>
+            </ul>
+    </nav>
+  
+</div>
+
+      </header>
+      
+      <div class="site-body wrapper">
+        <aside class="site-sidebar" id="site-sidebar">
+          
+            <h3 class="toc-title">Table of Contents</h3>
+<nav class="toc-nav">
+  
+
+</nav>
+
+          
+        </aside>
+        <main class="site-main" id="site-main" aria-label="Content">
+          <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+
+    <h1 class="post-title p-name" itemprop="name headline">Chapter1: Matlab 概述和编程基础</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2019-10-30T00:00:00+08:00" itemprop="datePublished">
+        Oct 30, 2019
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Lu Nie</span></span></p>
+
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>本系列旨在整理Matlab在认知神经科学中的应用</p>
+
+<h4 id="1-编程环境">1. 编程环境</h4>
+<blockquote>
+  <p><strong>命令窗口</strong></p>
+  <ul>
+    <li>命令窗口中我们可以直接输入Matlab代码并执行。</li>
+    <li>常用来测试简单的代码，查询Matlab自带的函数，或者对正在运行的代码进行中断操作；或是在运行某些需要输入参数的代码时，也在命令窗口进行。</li>
+    <li>换言之，通常情况下，是在编辑器当中去完成代码。
+<strong>工作空间</strong></li>
+    <li>工作空间用于保存代码执行时的所有变量。</li>
+    <li>查看–whos X（变量）class 函数 （询问），isa函数 (判断)</li>
+    <li>保存工作空间中的变量 — save ws a b; 将变量a b保存到名为ws.mat 文件中</li>
+    <li>清除— clear</li>
+    <li>将保存的变量再次读取到工作空间中 load ws</li>
+    <li>保存已经编写的代码 diary 函数 — diary off 终点
+<strong>编辑器</strong></li>
+    <li>最重要！用于编写和调试Matlab代码，并将其保存为扩展名为”.m”的文件</li>
+  </ul>
+</blockquote>
+
+<h4 id="2-编程语言">2. 编程语言</h4>
+<blockquote>
+  <p>变量</p>
+  <ul>
+    <li>命名规则
+数据类型</li>
+    <li>整型</li>
+    <li>浮点型</li>
+    <li>字符型</li>
+    <li>逻辑型：用于判断一段语句是否正确</li>
+    <li>结构体:可以包含多种不同的数据类型。如，实验中，记录被试的name，RT, accuracy； 
+操作如下：
+       Response.Name=‘Lulu’
+       Response.Time=240.5
+       Response.accuracy=0.98 
+      此时的Response 为一个结构体。[  ]</li>
+    <li>元胞：{} 注意索引方式与结构体有差别</li>
+    <li>cell的两种创建方式：指定陈述 &amp; cell函数</li>
+    <li>函数句柄：通常用于间接调用一个函数的取值或者数据类型。常用于作图过程中对图片的不同属性进行操作。
+矩阵基础</li>
+    <li>矩阵通过[中括号]定义，一个中括号定义一个矩阵，区分列–n, and 空格; 区分列–;</li>
+    <li>提取矩阵中的元素：采用矩阵索引，定位到要提取的元素所在的行，列即可。另外，还有采用”:”和”end”的方法。</li>
+    <li>多维矩阵的定义： (行，列，页): 在每一页上去定义行、列。多维矩阵也可以用cat()串联函数进行构造
+矩阵运算</li>
+    <li>加：“+” 两个矩阵内对应位置的元素值之和</li>
+    <li>减：“-”</li>
+    <li>乘法:“*” 服从矩阵相乘的规则 不是一一对应</li>
+    <li>除: 左除(/)，右除()</li>
+    <li>乘方：“^”</li>
+    <li>转置：“‘”行列互换</li>
+    <li>数组乘法（点乘）”.*” 两个矩阵中对应位置的元素点点相乘</li>
+    <li>数组除法（左点除，右点除）点点相除</li>
+    <li>数组乘方（点乘方）矩阵中的元素独立进行乘方运算</li>
+  </ul>
+</blockquote>
+
+<p>除了以上运算符，可以使用各运算对应的函数进行运算</p>
+<blockquote>
+  <p>关系运算：实则是矩阵中，各元素点对点的关系判断，返回的是逻辑变量0(假),1（真）</p>
+  <ul>
+    <li>大于 &gt;</li>
+    <li>小于 &lt;</li>
+    <li>大于等于 &gt;=</li>
+    <li>小于等于&lt;=</li>
+    <li>== 等于</li>
+    <li>~=不等于</li>
+    <li>&amp; 与</li>
+    <li>
+      <table>
+        <tbody>
+          <tr>
+            <td>或</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <li>短路逻辑与（&amp;&amp;）逐个判断每个对象。一旦遇到某个对象是假，不再继续，直接返回假</li>
+    <li>
+      <table>
+        <tbody>
+          <tr>
+            <td>短路逻辑或（</td>
+            <td> </td>
+            <td>）逐个判断每个对象。一旦遇到某个对象是真，不再继续，直接返回真</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <li>~ 非
+注意：计算有优先级</li>
+    <li>（1）转置、乘方、数组乘方</li>
+    <li>（2）逻辑非</li>
+    <li>（3）矩阵乘除法、数组乘除法</li>
+    <li>（4）矩阵加减法、数组加减法
+      <h4 id="3matlab程序设计基础-程序的创建和程序的调试">3.Matlab程序设计基础 （程序的创建和程序的调试）</h4>
+      <h5 id="1程序的创建">1.程序的创建</h5>
+      <p>程序的创建其实就是在新建一个m.文件，并在其中进行代码编写。快捷键：命令窗口中敲入: edit 即可打开编辑器。Matlab程序文件包括两种：m文件和函数function
+script :</p>
+    </li>
+    <li>脚本文件  和函数不同的是，脚本能够将程序中所定义的变量完整保存在工作空间，方便查看程序运行结果。</li>
+    <li>通常用于编写单次使用的程序。
+function：是通过Matlab函数所要求的一定格式进行编写并保存的m文件；</li>
+    <li>通过函数定义的变量，在函数运行结束后不会保存在工作空间中 。</li>
+    <li>调用方便，通常用于编写多次使用的程序。
+<strong>永久性函数</strong>：可以在编辑器中编写并保存，并可以在命令窗口和其他m文件中进行调用。通过function语句指引，格式为：</li>
+    <li>function [out1,out2,…] = FunName(input1, input2, …)
+               % 注释说明部分 （函数中的注释部分，可以通过help指令显示出来）
+               函数体语句</li>
+    <li>永久性函数的命名规则和变量名相同，最好和m文件名一致，并且必须保存在单一的m文件中。函数输出参数中提到的变量（e.g. Out1, out2…）要在函数体中予以赋值。自定义函数的编写要避面与系统自带的函数名重复。
+<strong>临时性函数</strong>：包括内联函数（inline function）和匿名函数（anonymous function）后者效率更高。临时性函数常用于创建需要临时使用的简单函数。
+<strong>子函数</strong>：当我们在编写函数的时候，可能会遇到需要在此函数脚本中调用一个固定程序（此时，该固定程序可以写为函数）。换言之，就是需要在函数中调用函数（可以是永久或是暂时，可以是Matlab自带，也可以是自定义的）。这时，该脚本本身的函数就是主函数，其他别调用来服务的，就是子函数。子函数可以被同一函数文件中的主函数和其他子函数调用：注意是同一函数文件！
+      <ul>
+        <li>在包含子函数的文件中，每个function要配一个end</li>
+        <li>子函数的使用使得主函数变得清晰明朗。
+函数的递归： 函数自己调用自己 （注意陷入无限循环）
+          <h5 id="2程序的调试-debug">2.程序的调试 debug</h5>
+          <p>简单的调试</p>
+        </li>
+      </ul>
+    </li>
+    <li>脚本：逐句运行</li>
+    <li>函数：(keyboard - return) 函数中的变量是不会存储到变量空间的，所以，需要在适当的地方加入keyboard指令，增加程序的交互性：程序运行到keyboard指令时会出现暂停，命令窗口出现提示符”K»”,此时我们可以查看和修改中间变量的取值。结束查看：输入return &gt; enter 
+设置程序断点 breakpoint</li>
+    <li>在脚本中，对应需要设置断点的行数，单击鼠标，会出现一个红点，表示断点位置。断点所在行的指令尚未执行。此时我们可以在工作空间中查看程序中变量的取值，也可以在命令窗口中输入指令以辅助调试代码，更重要的，这表明断点以前的代码能够正常运行。</li>
+    <li>利用 breakpoint + step （对应图标）可以逐行运行代码。</li>
+    <li>注意：修改代码之前需要退出断点调试，修改并保存后才可以重新开始调试。</li>
+    <li>断点调试常用功能</li>
+    <li>补充：清除所有断点，快捷键为： 命令窗口 dbclear all</li>
+  </ul>
+</blockquote>
+
+<h4 id="4实验设计常用函数">4.实验设计常用函数</h4>
+
+<p>心理学实验设计编程通常需要的主要步骤：</p>
+<ul>
+  <li>实验设计的试次；</li>
+  <li>编写实验刺激</li>
+  <li>呈现实验刺激</li>
+  <li>输出实验结果</li>
+</ul>
+
+<blockquote>
+  <p>设计实验的trial ——随机函数</p>
+  <ul>
+    <li>rand: 生成[0 1]之间均匀分布的浮点随机数</li>
+    <li>rand(2,3)： 生成一个2*3的随机矩阵</li>
+    <li>randi(n)：生成一个[1,n]之间均匀分布的随机整数</li>
+    <li>randi(10,2,3): 生成一个范围在[1 10]的大小为2*3的随机整数矩阵</li>
+    <li>randn：生成标准正态分布的随机数； randn(2,3): 生成2*3标准正态分布矩阵</li>
+    <li>产生两组完全一样的随机数或者随机矩阵：设置随机数种子  rand (’seed’, seed)的使用。用于当实验要求不同的实验被试采用同样的实验trial顺序时。
+设计实验的trial——将序列进行随机排列</li>
+    <li>randperm (n)函数 对1到n之间的正整数进行随机排列</li>
+    <li>Shuffle 函数(这个是psychtoolbox的函数)：用于对数组或是矩阵排列，可用于对矩阵的每一列进行独立的随机排列 
+编写实验刺激</li>
+    <li><strong>特殊矩阵生成方式</strong>
+<strong>zeros</strong> 
+<strong>ones</strong>
+<strong>eye</strong> 单位矩阵
+<strong>diag</strong> 对角矩阵
+<strong>rand</strong> 随机矩阵
+<strong>randn</strong> 随机整数矩阵
+<strong>magic</strong> 魔方矩阵</li>
+    <li><strong>对矩阵进行计算的函数</strong>
+<strong>abs</strong>: 计算绝对值
+<strong>sin/sind</strong>: 计算正弦函数值
+<strong>cos/cosd</strong>: 计算余弦函数值
+<strong>tan/tand</strong>：计算正切函数值
+<strong>round/floor/ceil</strong>: 四舍五入取整 / 向负无穷方向取整/向正无穷方向取整
+<strong>min/max/mean/std</strong>
+<strong>range</strong> 计算极差
+<strong>sign</strong>判断正负号
+<strong>注意</strong>：</li>
+    <li>sin/sind;cos/cosd 之类的函数，变量是角度还是弧度</li>
+    <li>max(): max一个矩阵的时候，返回每一列的最大值；如果max一个向量，返回的是该行的最大值。二者结合，可以求整个矩阵的最大值max(max(A)) = max(A(: )): 冒号的作用是先将A中所有元素排成一列。mean（）函数也有类似用法。</li>
+    <li><strong>对矩阵进行操作的函数</strong>
+<strong>sort</strong> 排序
+<strong>sortrows</strong> 按照关键列进行排序
+<strong>rot90</strong> 逆时针旋转
+…
+还有很多，需要的时候查阅
+<strong>呈现实验刺激——判断类函数</strong></li>
+    <li>函数 isempty()， 是可以直接对变量是否为空值进行判断，返回逻辑值0或者1；
+<strong>输出实验结果——转化操作、路径和文件操作</strong></li>
+    <li>（当需要根据不同的需求保存不同类型的数据，以及对于文件的保存路径和文件本身的操作时）：
+<strong>常见的转化操作函数</strong></li>
+    <li>函数num2str(X, FORMAT), 此处format的格式规则，与之前的 sprintf() 类似</li>
+    <li>函数int8() 特别适用在保存图片的时候</li>
+    <li>常见的路径和文件操作函数：方便的存储和读取文件</li>
+  </ul>
+</blockquote>
+
+  </div>
+
+  <footer class="post-footer">
+    
+      <div class="post-meta">
+        <i class="fas fa-folder"></i>
+        <ul class="post-taxonomies post-categories">
+          
+          
+            <li class="post-category">
+              
+              <a href="/categories/#psychotoolbox">Psychotoolbox</a>
+            </li>
+          
+        </ul>
+      </div>
+    
+
+    
+      <div class="post-meta">
+        <i class="fas fa-tags"></i>
+        <ul class="post-taxonomies post-tags">
+          
+          
+            <li class="post-tag">
+              
+              <a href="/tags/#experimental-design">experimental-design</a>
+            </li>
+          
+        </ul>
+      </div>
+    
+
+    <nav class="post-pagination" role="navigation">
+      
+
+      
+        <a class="post-next" href="/jekyll/2021/02/09/markdown.html">
+          <h4 class="post-pagination-label">Next</h4>
+          <span class="post-pagination-title">
+            Markdown 基本语法
+ <i class="fas fa-arrow-right"></i>
+          </span>
+        </a>
+      
+    </nav>
+  </footer>
+
+  
+  
+</article>
+
+          <footer class="site-footer">
+            <div class="footer-col-wrapper">
+
+  <div class="footer-col">
+    <div class="copyright">
+      
+      
+      
+      
+      <p>Copyright © 2019&nbsp;-&nbsp;2021 Nie Lu; All rights reserved.</p>
+      
+    </div>
+    <p>
+      Powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://github.com/ngzhio/jekyll-theme-hamilton">Hamilton</a>
+    </p>
+  </div>
+
+  <div class="footer-col">
+    <p>A Simple Personal Blog.</p>
+  </div>
+</div>
+
+          </footer>
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

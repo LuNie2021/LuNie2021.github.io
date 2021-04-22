@@ -1,0 +1,14 @@
+- title: About
+  url: /about/
+- title: Years
+  url: /years/
+- title: Categories
+  url: /categories/
+- title: Tags
+  url: /tags/
+- title: Projects
+  sublinks:
+    - title: WorkingMemory
+      url: /workingmemory/
+    - title: Anhedonia
+      url: /anhedonia/

@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2021-04-22T09:31:32+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Lu Nie Blog</title><subtitle>A Simple Personal Blog.</subtitle><author><name>Nie Lu</name></author><entry><title type="html">Troubleshooting: eeg滤波后波形怪异</title><link href="http://localhost:4000/troubleshooting/2021/03/18/debug-eeg-preproc-filter.html" rel="alternate" type="text/html" title="Troubleshooting: eeg滤波后波形怪异" /><published>2021-03-18T00:00:00+08:00</published><updated>2021-03-18T00:00:00+08:00</updated><id>http://localhost:4000/troubleshooting/2021/03/18/debug-eeg-preproc-filter</id><content type="html" xml:base="http://localhost:4000/troubleshooting/2021/03/18/debug-eeg-preproc-filter.html">&lt;p&gt;&lt;strong&gt;原因：&lt;/strong&gt;
+0.1-30 Hz 的滤波，lower edge 和 higher edge 数字写反了！！&lt;/p&gt;
+
+&lt;p&gt;丢人！&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;补充学习材料:&lt;/strong&gt;&lt;/p&gt;</content><author><name>Lu Nie</name></author><category term="troubleshooting" /><category term="eeg" /><category term="eeglab" /><category term="preprocess" /><summary type="html">原因： 0.1-30 Hz 的滤波，lower edge 和 higher edge 数字写反了！！</summary></entry><entry><title type="html">Troubleshooting: jupyter not found</title><link href="http://localhost:4000/troubleshooting/2021/03/15/debug-jupyter.html" rel="alternate" type="text/html" title="Troubleshooting: jupyter not found" /><published>2021-03-15T00:00:00+08:00</published><updated>2021-03-15T00:00:00+08:00</updated><id>http://localhost:4000/troubleshooting/2021/03/15/debug-jupyter</id><content type="html" xml:base="http://localhost:4000/troubleshooting/2021/03/15/debug-jupyter.html">&lt;p&gt;解决 pip3安装jupyter notebook后无法在terminal调用&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h4 id=&quot;1-install-jupyter&quot;&gt;1. install jupyter&lt;/h4&gt;
+  &lt;p&gt;python version: python3
+MacOS terminal 
+安装：&lt;/p&gt;
+  &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip3 install jupyter 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+  &lt;p&gt;调用：在terminal中输入&lt;/p&gt;
+  &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jupyter notebook
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+  &lt;h4 id=&quot;2-bug&quot;&gt;2. bug&lt;/h4&gt;
+  &lt;p&gt;报错：
+“jupyter cannot found” 
+原因：安装的jupyter的路径没有存入根目录&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;h4 id=&quot;3-solution-导入路径&quot;&gt;3. solution: 导入路径&lt;/h4&gt;
+  &lt;p&gt;1 检查已安装，并查找位置&lt;/p&gt;
+  &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip3 show jupyter
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+  &lt;p&gt;得到一堆反馈，其中有：&lt;/p&gt;
+  &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Location: /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.7/site-packages
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+  &lt;p&gt;2 将位置添加进入路径
+方法一：&lt;/p&gt;
+  &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vim ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+  &lt;h5 id=&quot;障碍不会-vim-语法&quot;&gt;障碍：不会 vim 语法&lt;/h5&gt;
+  &lt;p&gt;基本语句：待补充（网上搜一下）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;方法二：直接用echo命令（参考blog教程中的echo用法）
+3 重载&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;source .zshrc 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;4 jupyter notebook&lt;/p&gt;
+&lt;h5 id=&quot;报错还是找不到&quot;&gt;报错：还是找不到&lt;/h5&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jupyter-notebook
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;可以！！！ 
+我也不知道为啥？？&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h4 id=&quot;3-bug无法加入自动补全代码扩展功能&quot;&gt;3. bug：无法加入自动补全代码扩展功能&lt;/h4&gt;
+  &lt;p&gt;原因：还是找不到路径
+解决：用VScode + kite软件替代&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Lu Nie</name></author><category term="troubleshooting" /><category term="python" /><category term="jupyter" /><summary type="html">解决 pip3安装jupyter notebook后无法在terminal调用</summary></entry><entry><title type="html">Preprocess EEG data based on EEGLAB</title><link href="http://localhost:4000/eeg/2021/03/09/how-to-preprocess-eeg-eeglab.html" rel="alternate" type="text/html" title="Preprocess EEG data based on EEGLAB" /><published>2021-03-09T00:00:00+08:00</published><updated>2021-03-09T00:00:00+08:00</updated><id>http://localhost:4000/eeg/2021/03/09/how-to-preprocess-eeg-eeglab</id><content type="html" xml:base="http://localhost:4000/eeg/2021/03/09/how-to-preprocess-eeg-eeglab.html">&lt;p&gt;本文梳理了采用EEGLAB对EEG信号的常用预处理过程&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h3 id=&quot;前提条件&quot;&gt;前提条件&lt;/h3&gt;
+  &lt;h3 id=&quot;主要步骤&quot;&gt;主要步骤&lt;/h3&gt;
+  &lt;h3 id=&quot;分析原理&quot;&gt;分析原理&lt;/h3&gt;
+  &lt;h3 id=&quot;注意事项&quot;&gt;注意事项&lt;/h3&gt;
+  &lt;h3 id=&quot;参考资料&quot;&gt;参考资料&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;background&quot;&gt;Background&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;对于脑电等研究工具的学习，一定是重实践轻理论，不要做“鲁班”。更多还是要关注研究问题本身，方法都是为科学问题服务的；&lt;/li&gt;
+  &lt;li&gt;关于脑电原理的参考书，推荐luck大神。&lt;/li&gt;
+  &lt;li&gt;本文默认你已经知道EEG数据大概是样子，比如知道“电极点”、“成分”等之类的概念。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;前提条件-1&quot;&gt;前提条件&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Matlab, 目前我使用的是MatlabR2020a&lt;/li&gt;
+  &lt;li&gt;eeglab，目前采用的eeglab14_1_2b&lt;/li&gt;
+  &lt;li&gt;针对neuracle家的脑电设备，请在eeglab&amp;gt;plugins中放入&lt;a href=&quot;https://github.com/neuracle/neuracle-eegfile-reader&quot;&gt;neuracle-eegfile-reader&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;另外再添加一个&lt;strong&gt;ADJUST_PLUGIN&lt;/strong&gt;，用于ICA的时候给一些剔除成分的建议，供参考&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;分析原理-1&quot;&gt;分析原理&lt;/h2&gt;
+&lt;h4 id=&quot;1-load-eeg-data&quot;&gt;1. load EEG data&lt;/h4&gt;
+&lt;p&gt;直接根据各家设备导入EEG数据即可。&lt;/p&gt;
+&lt;h4 id=&quot;2--定位通道-channel-location&quot;&gt;2.  定位通道 channel location&lt;/h4&gt;
+&lt;p&gt;目的是让eeglab识别出每个channel对应在头皮上的电极点名称是什么，比如AFz; eeglab的默认文件中能识别，如果不能，可能是自己帽子设置的label有问题，咨询厂家。&lt;/p&gt;
+&lt;h4 id=&quot;2-删除无用电极&quot;&gt;2. 删除无用电极&lt;/h4&gt;
+&lt;p&gt;并非每一个采集到的电极点都需要进行分析，此步骤一般会将水平和垂直眼电去掉；后续去除眼电干扰用ICA&lt;/p&gt;
+&lt;h3 id=&quot;3-remove-dc-offset&quot;&gt;3. remove DC offset&lt;/h3&gt;
+&lt;p&gt;目的是去除EEG信号中的直流偏置，用detrend函数&lt;/p&gt;
+&lt;h3 id=&quot;4滤波&quot;&gt;4.滤波&lt;/h3&gt;
+
+&lt;p&gt;“滤波分为高通滤波，低通滤波，带通滤波和凹陷滤波。
+&lt;strong&gt;高通滤波(high-pass)&lt;/strong&gt; 是指，高于某个频率的信号可以通过，而低于这个频率的信号会被衰减过滤掉。而&lt;strong&gt;低通滤波(low-pass)&lt;/strong&gt; 则相反，指的是低于某个频率的信号可以通过，而高于这个频率的信号则相反。&lt;strong&gt;注意，在输入数值的时候，高通滤波要输入的是一个较小的数字，而低通滤波则是输入一个较大的数字&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;带通滤波&lt;/strong&gt;，是指在某个频率段范围内的信号可以通过，而这个频率段范围以外的信号会被衰减过滤掉，就相当于同时做了高通滤波和低通滤波。&lt;em&gt;不过数据处理的时候，建议高通和低通滤波分开进行，而不是直接用一个带通&lt;/em&gt;。
+&lt;strong&gt;凹陷滤波&lt;/strong&gt;是在某个频率范围内的信号会被衰减过滤掉，而这个频率范围以外的信号会被保留下来。通常用来去除50Hz市电的干扰。我国的50Hz，因此在收集到的信号中，会有一个非常强烈的50Hz频段的信号存在.&lt;/p&gt;
+
+&lt;p&gt;“值得注意的是，滤波并不能完全过滤出我们想要的频段。比如30Hz的低通滤波，并不是说30Hz以外的信号就通通被过滤掉了，而是以30Hz为截止频率，高于这个截止频率的信号会被逐渐衰减。”&lt;/p&gt;
+
+&lt;p&gt;我们有时候会看到数据在做了30Hz的低通滤波之后，还会再做一个50Hz的凹陷滤波，就是因为，并不是做了30Hz的低通滤波就能够完全把30Hz以上的信号全部过滤掉，而50Hz的干扰又是非常强的，所以最好还是再做一个50Hz的凹陷滤波。”
+&lt;strong&gt;操作注意&lt;/strong&gt; 
+滤波参数输入时，lower edge 小数字；higher edge输入大数字&lt;/p&gt;
+&lt;h3 id=&quot;5-重参考&quot;&gt;5. 重参考&lt;/h3&gt;
+&lt;p&gt;“首先要解释的是参考的定义。我们看到采集之后的数据是一个个的数值，但这个数值是什么意思呢，就是电极所在位置跟参考电极之间的电位差。&lt;/p&gt;
+
+&lt;p&gt;一般在脑电记录的时候会采用的参考电极有鼻尖参考，cz或头顶中央参考，还有单侧乳突参考，乳突就是耳朵后面一小块突起的区域。我们所看到的每个通道的数值，其实就是指这个通道跟参考通道之间的电位差。&lt;/p&gt;
+
+&lt;p&gt;在分析数据的时候，有时候我们会想要转换参考点的位置。因为不同位置的参考，会对数据造成一定的影响。比如记录时采用的是cz或头顶中央参考，那么自然地，距离cz点较近的电极点，记录到的电位差会非常小，而离得远的电极记录到的电位差就自然会大一点，这种大与小的差异，并不是由认知活动产生的，而是由记录方式产生的。又比如，单侧乳突参考，那脑袋左边的电极点跟右边的电极点，也会存在着记录方式不同产生的电位差不同。&lt;/p&gt;
+
+&lt;p&gt;常用的一些参考位置有双侧乳突平均参考，指将两个乳突数据的平均值作为参考数据，或者是全脑平均参考，指的是将全脑所有数据的均值作为参考数据的方法，不过使用全脑平均参考的时候要注意，眼电数据不要纳入其中，因为眼电数据的波动起伏非常大，很容易对数据造成比较大的干扰。”&lt;/p&gt;
+
+&lt;h3 id=&quot;4-分段&quot;&gt;4. 分段&lt;/h3&gt;
+&lt;p&gt;将连续记录的EEG数据，根据打好的marker，进行分段，然后每个条件放一起；为后续的分析作准备；&lt;/p&gt;
+&lt;h3 id=&quot;5基线矫正&quot;&gt;5.基线矫正&lt;/h3&gt;
+&lt;p&gt;“在ERP实验中，我们关心的是这个刺激事件带给被试什么样的变化，因此需要有一个比较。而在事件发生之前的时间里，我们认为被试是处于一个相对平静的状态，此时的脑电活动，代表了一个平静状态下的脑电活动。所以我们将这段时间内的脑电活动当成一个基线，拿事件发生之后的活动去跟它做比较，来分辨刺激事件到底让被试产生了什么样的活动。&lt;/p&gt;
+
+&lt;p&gt;一般来说，都是以分段中，事件之前这段时间来作为基线的，比如分段为-200毫秒到1000毫秒，那就将所有的数据，减去前200毫米以内数据的均值。换言之，，就是将这前200毫秒以内的数据均值当成是“海平面”，所有其他的数据的数值，都是相对于这个“海平面”数据的高度。&lt;/p&gt;
+
+&lt;p&gt;基线校正的第二个作用，防止数据漂移带来的影响。有时候因为某些原因，我们采集到的数据，会呈现一个逐渐缓慢向上漂移的趋势，而在分完段之后，由于向上飘的影响，每一段数据的起点将不在同一个地方，也会使得这段数据的绝对波幅变高。而基线校正就可以校正这种漂移带来的影响，让每一段数据都拥有一个差不多的起点。”&lt;/p&gt;
+&lt;h3 id=&quot;6visual-checking&quot;&gt;6.visual checking&lt;/h3&gt;
+&lt;p&gt;去掉质量不好，漂移比较大的trial
+&lt;strong&gt;插值坏道&lt;/strong&gt;
+在做完上述这些处理之后，可以保存一下数据。因为在这之前的操作，是每个被试都需要做的基础操作，后期我们可以通过代码来实现批处理。而在这之后的操作，是需要根据每个被试的具体情况具体分析去处理的，因此只能一个个做，不能进行批处理。
+从这一步开始可以说是真正的去除伪迹的过程了。去伪迹大体分为两种，横向操作和纵向操作，横向即对通道进行校正操作，对数据不好的导联进行插值处理，纵向是指挑出数据不好的trials，删除掉。建议是先横向处理后再纵向剔除，尽量保留下更多的trials数。
+EEGLAB中插值坏导有两种方式，一种是以某通道周围几个通道的数据的&lt;strong&gt;平均值&lt;/strong&gt;，来替代这个通道的数据，这种直接通过代码实现即可。另外一种是&lt;strong&gt;EEGLAB内置&lt;/strong&gt;的一种算法实现，具体换算是什么过程我也不太清楚，但是我问过贾会宾老师，他是推荐使用第二种方法。原因在于，我们记录的是头皮脑电，头是一个球体，因此直接用周围数据的均值来代替这种方法有点粗糙，而EEGLAB内置的方法则会考虑到容积传导效应，以及近的点和远的点贡献的权重不同来进行插值，因此会更加有效。&lt;/p&gt;
+
+&lt;h3 id=&quot;7-run-ica&quot;&gt;7. Run ICA&lt;/h3&gt;
+&lt;p&gt;“这是一个很有用但也很难的方法，前面说过，我们记录到的是头皮脑电，脑电帽上划出了一个个的点来表示位置，但是我们在FPz点记录到的数据，就真的是FPz点这个位置头皮下方的区域所产生的电活动？不一定。做过实验的都知道，眨眼会产生影响，左右看会产生影响，帽子戴得太紧导致肌肉紧张也会产生影响，还有左右的FP1，FP2处产生的电活动也会影响到FPz，甚至在离它最远的Oz点下方产生的电活动，也有可能对前方FPz点产生微弱的影响。因为真正的电活动产生于头皮下方颅骨内部，它经过了这么一层又一层的传播之后，不同源的电活动肯定会相互影响，从而导致某个记录点记录到的数据，混合了很多不同成分的电活动。而独立主成分分析，就是要对记录点的数据做一个逆运算，把每个记录点的数据，分解成一个又一个的成分组成。然后我们再从中剔除掉伪迹成分，比如眨眼的成分，肌肉紧张的成分等，从而得到一个相对干净的数据。”
+常见的ICA伪迹见后续的操作步骤部分&lt;/p&gt;
+
+&lt;h3 id=&quot;8-剔除成分&quot;&gt;8. 剔除成分&lt;/h3&gt;
+&lt;p&gt;将眼动等伪迹成分剔除。此步可以结合adjust的建议来查看。没有特别强的把握，不要随意剔除成分。万一踢掉了想去除的成分，就尴尬了。&lt;/p&gt;
+
+&lt;p&gt;以上，就是数据预处理分析的过程。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;9个体平均&quot;&gt;9.个体平均&lt;/h3&gt;
+&lt;p&gt;分条件对分段数据进行叠加平均，得到individual level的结果&lt;/p&gt;
+&lt;h3 id=&quot;10组平均&quot;&gt;10.组平均&lt;/h3&gt;
+&lt;p&gt;将所有被试进行平均&lt;/p&gt;
+
+&lt;h1 id=&quot;数据分析主要步骤&quot;&gt;数据分析主要步骤&lt;/h1&gt;
+&lt;p&gt;(1) load EEG data
+(2) channel location 
+(3) remove DC offset (optional)
+(4) filter: lower-0.1; higher - 30; 
+(5)re-reference
+(6) epoch
+(7)remove baseline 
+(8) visual checking 
+(9) Run ICA
+(10) remove components 
+(11) individual avarage 
+(12) group avarage&lt;/p&gt;
+&lt;h1 id=&quot;参考资料-1&quot;&gt;参考资料&lt;/h1&gt;
+&lt;p&gt;[1] &lt;a href=&quot;&apos;https://blog.csdn.net/fzf1996/article/details/104591421&apos;&quot;&gt;脑电信号数据术语和文件格式&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;[2] &lt;a href=&quot;https://roses.blog.csdn.net/article/details/103015904?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.control&amp;amp;dist_request_id=&amp;amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.control&quot;&gt;包学会的eeglab中文教程&lt;/a&gt;
+[3] fieldtrip&lt;/p&gt;</content><author><name>Lu Nie</name></author><category term="EEG" /><category term="eeg" /><category term="eeglab" /><category term="preprocess" /><summary type="html">本文梳理了采用EEGLAB对EEG信号的常用预处理过程</summary></entry><entry><title type="html">将Blog放进冰箱拢共分几步？</title><link href="http://localhost:4000/jekyll/2021/02/10/how-to-establish-blog.html" rel="alternate" type="text/html" title="将Blog放进冰箱拢共分几步？" /><published>2021-02-10T00:00:00+08:00</published><updated>2021-02-10T00:00:00+08:00</updated><id>http://localhost:4000/jekyll/2021/02/10/how-to-establish-blog</id><content type="html" xml:base="http://localhost:4000/jekyll/2021/02/10/how-to-establish-blog.html">&lt;p&gt;本文旨在证明一个啥也不懂的人也能搭建个人博客。&lt;/p&gt;
+
+&lt;h2 id=&quot;1-前情提要&quot;&gt;1 前情提要&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;操作系统&lt;/strong&gt;：macOS Catalina&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Ruby Version&lt;/strong&gt;: 3.0.0&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Jekyll Version&lt;/strong&gt;: 4.2.0&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;为什么要用github pages 搭建个人博客？&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;因为免费，借用github的服务器可免费搭建个人博客。并且在不同电脑端更新博客也很方便，git clone 即可。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;为啥用Jekyll？&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;因为Jekyll有很多好看的主题，并且可以实现静态网页预览，这可以使用户更加专注在内容本身，而不是花枝招展复杂的代码。&lt;/p&gt;
+
+&lt;h2 id=&quot;2-关键步骤&quot;&gt;2 关键步骤&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;准备前提环境&lt;/li&gt;
+  &lt;li&gt;安装Jekyll&lt;/li&gt;
+  &lt;li&gt;选择主题，搭建博客&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-环境配置&quot;&gt;3 环境配置&lt;/h2&gt;
+
+&lt;p&gt;安装 Command Line Tools&lt;/p&gt;
+
+&lt;p&gt;打开terminal，运行：&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xcode-select --install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;用Homebrew安装Ruby：Jekyll需要在Ruby环境下运行，因此首先安装Ruby.&lt;/p&gt;
+
+&lt;p&gt;安装 Homebrew&lt;/p&gt;
+
+&lt;p&gt;如果用官网的方式，大概率是显示连接失败，无法安装（因为你懂的原因），需要更换国内的源。
+&lt;a href=&quot;https://zhuanlan.zhihu.com/p/111014448&quot;&gt;详情点击此处。&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;terminal输入：&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/bin/zsh -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;安装Ruby&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install ruby 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;将ruby路经添加到shell configutation&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# If you&apos;re using Zsh
+echo &apos;export PATH=&quot;/usr/local/opt/ruby/bin:$PATH&quot;&apos; &amp;gt;&amp;gt; ~/.zshrc
+
+# If you&apos;re using Bash
+echo &apos;export PATH=&quot;/usr/local/opt/ruby/bin:$PATH&quot;&apos; &amp;gt;&amp;gt; ~/.bash_profile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;另，如果有多个版本的Ruby需要安装，可以用rbenv来管理。&lt;/p&gt;
+
+&lt;h2 id=&quot;4-安装-jekyll&quot;&gt;4 安装 jekyll&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 安装bundler和 jekyll 
+
+gem install --user-install bundler jekyll
+
+# 将X.X 替换为当前使用的ruby版本（ruby -v 查看）
+
+echo &apos;export PATH=&quot;$HOME/.gem/ruby/X.X.0/bin:$PATH&quot;&apos; &amp;gt;&amp;gt; ~/.zshrc 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;至此，jekyll 安装完成！！&lt;/p&gt;
+
+&lt;p&gt;可输入 jekyll -v 确认。&lt;/p&gt;
+
+&lt;p&gt;接下来就是创建一个新blog, 可以自己直接新建，也可以用别人的主题模板。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;51-独立自主创建一个blog&quot;&gt;5.1 独立自主创建一个blog&lt;/h2&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll new myblog 
+
+cd myblog
+
+# build网站，并在本地建一个服务器
+bundle exec jekyll serve 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;最后terminal会显示一个站点，可用浏览器打开。用于网站预览。&lt;/p&gt;
+
+&lt;p&gt;预览无误，推送（合并到“使用模板搭建”部分细讲）。&lt;/p&gt;
+
+&lt;h2 id=&quot;52-使用模板搭建一个blog&quot;&gt;5.2 使用模板搭建一个blog&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;搭建：在github建一个自己用户名的仓库: username.github.io&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;clone： 
+选中的jekyll theme clone到本地 (也可根据模板作者在 READ ME中提示的方式进行)；另再将自己的仓库clone到本地，作为本地仓库。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;推送：在本地根据自己需求修改好后，push到远端 username.github.io&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;521-搭建&quot;&gt;5.2.1 搭建&lt;/h3&gt;
+&lt;p&gt;在GitHub新建一个仓库。&lt;/p&gt;
+&lt;h3 id=&quot;522-clone&quot;&gt;5.2.2 clone&lt;/h3&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# git clone + 站点地址的形式
+git clone https://github.com/username/username.github.io.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;修改模板文件夹的信息，基本修改 _config.yml 里的个人信息即可。&lt;/p&gt;
+
+&lt;p&gt;了解整个文件夹内容后，可以修改任何信息。&lt;/p&gt;
+&lt;h3 id=&quot;523-move-files&quot;&gt;5.2.3 move files&lt;/h3&gt;
+&lt;p&gt;将自定义好内容的主题文件夹内文件移动到上一步git clone好的自己的文件夹&lt;/p&gt;
+
+&lt;h3 id=&quot;524-jekyll-serve&quot;&gt;5.2.4 jekyll serve&lt;/h3&gt;
+&lt;p&gt;修改好博客后，可以先在本地预览：&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd your blog files
+
+bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;525-push&quot;&gt;5.2.5 push&lt;/h3&gt;
+&lt;p&gt;push之前一定要做两步：&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add .  
+
+git commit -m &apos;被修改过的文件名称&apos;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 保存修改内容
+git add .
+git commit -m &apos;lunie2021.github.io&apos;
+# 确认远端仓库是否为自己的站点，还是模板所在站点
+git remote -v
+# 修改为自己站点
+git remote set-url origin https://github.com/username/username.github.io.git
+# push
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;6-安装过程遇到的各种坑--2021-04-21-updated&quot;&gt;6 安装过程遇到的各种坑 – 2021-04-21 updated&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;如果直接用homebrew官网提供的语句在终端中运行，会出现connect failed 报错&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;原因：因为“你懂的”原因，官网的域名被“污染”。因此，需要用国内的镜像网站上的安装源。&lt;/p&gt;
+
+&lt;p&gt;解决：&lt;/p&gt;
+
+&lt;p&gt;国内镜像安装方式： https://zhuanlan.zhihu.com/p/111014448&lt;/p&gt;
+
+&lt;p&gt;简单来说，运行自动脚本，选择一个安装源即可，接着就自动安装。&lt;/p&gt;
+
+&lt;p&gt;安装脚本：/bin/zsh -c “$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)”&lt;/p&gt;
+
+&lt;p&gt;卸载脚本：/bin/zsh -c “$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/HomebrewUninstall.sh)”&lt;/p&gt;
+
+&lt;p&gt;最后，如果显示 already up-to-date. 表示成功。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;安装过程报错：
+Error: Fetching /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core failed! ==&amp;gt; Homebrew has enabled anonymous aggregate formula and cask analytics. Read the analytics documentation (and how to opt-out) here: https://docs.brew.sh/Analytics
+No analytics have been recorded yet (nor will be during this &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;brew&lt;/code&gt; run).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;解决：参照官网提示 https://docs.brew.sh/Analytics，将Google analysis 功能解除，即可。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;(sudo) gem Jekyll成功后，输入“Jekyll -v”检查，发现Jekyll未能成功安装。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;原因：升级了macOS Catalina，新系统的shell已经更换为zsh。导致之前的安装都是在bash下进行的，zsh并没有完成。
+发现这个是因为terminal中的提示：&lt;/p&gt;
+
+&lt;p&gt;The default interactive shell is now zsh. 
+To update your account to use zsh, please run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chsh -s /bin/zsh&lt;/code&gt;. 
+For more details, please visit https://support.apple.com/kb/HT208050.&lt;/p&gt;
+
+&lt;p&gt;解决方法：
+解决方法：&lt;/p&gt;
+
+&lt;p&gt;step 1&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;不使用bash，切换zsh，chsh -s /bin/zsh命令切换即可。（我使用的1）&lt;/li&gt;
+  &lt;li&gt;继续使用bash。-输入vim ./.bash_profile 回车，然后就打开了bash_profile文件。-点击i建进入编辑状态，添加 export BASH_SILENCE_DEPRECATION_WARNING=1，这样一个环境变量就添加上了。-点击esc退出编辑状态，输入:wq回车保存退出。-输入source ～/.bash_profile ，让配置文件在修改后立即生效。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;step 2: 当terminal进入zsh界面后，确认homebrew, ruby 是否安装，接着重新安装Jekyll&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Jekyll serve时，出现…./Users/apple/.local/share/gem/ruby/3.0.0/gems/jekyll-4.2.0/lib/jekyll/commands/serve/servlet.rb:3:in `require’: cannot load such file – webrick (LoadError)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;原因：运行serve时，找不到webrick 文件。这是因为新版的 Ruby-3-0-0 不再包含webrick 文件。&lt;/p&gt;
+
+&lt;p&gt;解决方法：自己安装。&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle add webrick
+# 重新jekyll build 
+jekyll build
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/jekyll/jekyll/issues/8523&quot;&gt;点击参考&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Not Found: /favicon.ico &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;原因：文件中缺少网站标识图片，可以不管，也可以提供。
+&lt;a href=&quot;https://blog.csdn.net/weixin_43972292/article/details/90216241&quot;&gt;点击参考&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;git push后，显示everything up-to-data, GitHub仓库并没有更新。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;原因：没有使用GitHub的专用存储语句；&lt;/p&gt;
+
+&lt;p&gt;解决方法：
+Jekyll预览无误后，输入：&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; #将修改的内容放进storage
+ git add .  
+
+ # 提交至本地仓库
+ git commit -m &apos;上传项目&apos; 
+
+ #上传至远端仓库，出现master -&amp;gt; master 表示上传成功；
+ git push origin master 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;网站点击文章内对应的标签，直接跳转至GitHub仓库的tags页面，而不是blog内的tag页面。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;原因：layout中关于post的设置里，tag跳转给的链接如下：
+“&amp;lt;a class=”post-tags-item” href=”http://localhost:4000/tags/”&amp;gt;&amp;lt;/a&amp;gt;”；显然，”site.url.site.baseurl.tag”这个路径指向的就是github仓库的tags;&lt;/p&gt;
+
+&lt;p&gt;解决方法：
+将路径改为博客内的tag位置；_congif.yml中url留白；&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;更换Jekyll主题后，执行bundle exec jekyll serve报错：bundler: failed to load command: jekyll (/usr/local/bin/jekyll)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;原因：bundle找不到能够使用的Jekyll&lt;/p&gt;
+
+&lt;p&gt;解决方法：在该jekyll主题下的gemfile文件中，加入你安装的jekyll ，最好带上版本号。
+&lt;a href=&quot;https://www.jianshu.com/p/4f7e1e3eeb3d&quot;&gt;&lt;em&gt;点击参考&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;注意：如果使用的模板只能用特定的版本号，可以查询下自己电脑是否安装，比如我这次使用的模板就只支持 jekyll 3.9.1&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem &quot;jekyll&quot;, &quot;~&amp;gt; 3.9.1&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;另外，关于Gemfile的作用，简单理解就是支持该主题正常运行的依赖文件。&lt;a href=&quot;https://ruby-china.org/topics/26655&quot;&gt;&lt;em&gt;官方解释点击参考&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;在使用新主题前，请先cd到主题文件夹，然后更新依赖文件：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle update 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;参考资料&quot;&gt;参考资料&lt;/h1&gt;
+&lt;p&gt;【1】&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;jekyll官方网站&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;【2】&lt;a href=&quot;https://www.bilibili.com/video/BV14x411t7ZU?from=search&amp;amp;seid=7751760845604383004&quot;&gt;指路b站&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;【3】&lt;a href=&quot;https://www.bilibili.com/video/BV1rC4y1878Y/?spm_id_from=333.788.recommend_more_video.0&quot;&gt;指路b站&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;【4】&lt;a href=&quot;https://www.cnblogs.com/A--G/p/5112619.html&quot;&gt;利用模板搭建jekyll&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;【5】&lt;a href=&quot;https://www.zhihu.com/question/20223939&quot;&gt;还不错的主题推荐&lt;/a&gt;&lt;/p&gt;</content><author><name>Lu Nie</name></author><category term="Jekyll" /><category term="jekyll" /><category term="Blog" /><summary type="html">本文旨在证明一个啥也不懂的人也能搭建个人博客。</summary></entry><entry><title type="html">Markdown 基本语法</title><link href="http://localhost:4000/jekyll/2021/02/09/markdown.html" rel="alternate" type="text/html" title="Markdown 基本语法" /><published>2021-02-09T00:00:00+08:00</published><updated>2021-02-09T00:00:00+08:00</updated><id>http://localhost:4000/jekyll/2021/02/09/markdown</id><content type="html" xml:base="http://localhost:4000/jekyll/2021/02/09/markdown.html">&lt;p&gt;本文整理一些markdown的常用语法，以用于编写博客。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档,在2004由约翰·格鲁伯（英语：John Gruber）创建。
+Markdown 编写的文档可以导出 HTML、Word、图像、PDF、Epub 等多种格式的文档，后缀为 .md, .markdown。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;h3 id=&quot;常用语法&quot;&gt;常用语法&lt;/h3&gt;
+  &lt;h3 id=&quot;可用编辑器&quot;&gt;可用编辑器&lt;/h3&gt;
+  &lt;h3 id=&quot;参考资料&quot;&gt;参考资料&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;1-常用语法&quot;&gt;1. 常用语法&lt;/h1&gt;
+
+&lt;h3 id=&quot;字体&quot;&gt;字体&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;粗体&lt;/strong&gt;：**&lt;输入内容&gt;**&lt;/输入内容&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;斜体&lt;/strong&gt;：*&lt;输入内容&gt;*&lt;/输入内容&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;段落&quot;&gt;段落&lt;/h3&gt;
+&lt;p&gt;在行首前加#，数量对应标题的等级；
+一级段落标题： #+段落标题
+二级段落标题：##+段落标题
+三级段落标题：###+段落标题&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;或者&lt;/strong&gt;，&lt;/p&gt;
+
+&lt;p&gt;一级标题下加一行”=====”
+二级标题下加一行“—–”
+三级标题前，加”###”&lt;/p&gt;
+
+&lt;h3 id=&quot;没有序号的point&quot;&gt;没有序号的point&lt;/h3&gt;
+
+&lt;p&gt;“短横（-）空格+内容”&lt;/p&gt;
+
+&lt;p&gt;效果如下：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;point&lt;/li&gt;
+  &lt;li&gt;point&lt;/li&gt;
+  &lt;li&gt;point&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;分隔符&quot;&gt;分隔符&lt;/h3&gt;
+&lt;p&gt;“—”（上下间隔一行，否则会被识别为二级标题）&lt;/p&gt;
+
+&lt;p&gt;效果如下：&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;外链接&quot;&gt;外链接&lt;/h3&gt;
+&lt;p&gt;用法：[描述](链接地址)
+链接地址会贴在描述上。&lt;/p&gt;
+
+&lt;h3 id=&quot;插入图片&quot;&gt;插入图片&lt;/h3&gt;
+&lt;p&gt;用法：[描述](图片地址)
+链接会贴在图片上，不过暂时不清楚本地图片链接的获取。&lt;/p&gt;
+
+&lt;h3 id=&quot;highlight代码&quot;&gt;highlight代码&lt;/h3&gt;
+&lt;p&gt;用三个```,将引用的代码括起来。（英文状态下的数字1旁边的键对应的点）&lt;/p&gt;
+
+&lt;p&gt;效果如下：&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;我是一行代码
+我是第二行代码
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;文字引用&quot;&gt;文字引用&lt;/h3&gt;
+&lt;p&gt;”&amp;gt;”+”引用内容”&lt;/p&gt;
+
+&lt;p&gt;效果如下：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;我有嘉宾，鼓瑟吹笙。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;todo-list&quot;&gt;Todo list&lt;/h3&gt;
+
+&lt;p&gt;代办事项用“[ ]”开头；&lt;/p&gt;
+
+&lt;p&gt;已完成用“[x]开头”&lt;/p&gt;
+
+&lt;p&gt;效果见下：(失效中)&lt;/p&gt;
+
+&lt;p&gt;[ ]  ddl快到啦&lt;/p&gt;
+
+&lt;p&gt;[ ]  ddl已经到啦&lt;/p&gt;
+
+&lt;p&gt;[x]  个人blog首发版&lt;/p&gt;
+
+&lt;h1 id=&quot;2可用编辑器&quot;&gt;2.可用编辑器&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown&quot;&gt;Cmd Markdown&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;优点是有markdown语法说明，非常适合刚接触的我。&lt;/p&gt;
+
+&lt;p&gt;缺点就是需要注册，web端反应不是很快。&lt;/p&gt;
+
+&lt;p&gt;Vscode：高效快捷,也可以预览。&lt;/p&gt;
+
+&lt;p&gt;熟悉后，可以转战vscode，编写发表一体化。&lt;/p&gt;
+
+&lt;h1 id=&quot;参考资料-1&quot;&gt;参考资料&lt;/h1&gt;
+&lt;p&gt;【1】&lt;a href=&quot;https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown&quot;&gt;Cmd Markdown操作手册&lt;/a&gt;&lt;/p&gt;</content><author><name>-Lu Nie</name></author><category term="Jekyll" /><category term="jekyll" /><category term="markdown" /><summary type="html">本文整理一些markdown的常用语法，以用于编写博客。</summary></entry><entry><title type="html">Chapter1: Matlab 概述和编程基础</title><link href="http://localhost:4000/psychotoolbox/2019/10/30/psychotoolbox-chapter-1.html" rel="alternate" type="text/html" title="Chapter1: Matlab 概述和编程基础" /><published>2019-10-30T00:00:00+08:00</published><updated>2019-10-30T00:00:00+08:00</updated><id>http://localhost:4000/psychotoolbox/2019/10/30/psychotoolbox-chapter-1</id><content type="html" xml:base="http://localhost:4000/psychotoolbox/2019/10/30/psychotoolbox-chapter-1.html">&lt;p&gt;本系列旨在整理Matlab在认知神经科学中的应用&lt;/p&gt;
+
+&lt;h4 id=&quot;1-编程环境&quot;&gt;1. 编程环境&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;命令窗口&lt;/strong&gt;&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;命令窗口中我们可以直接输入Matlab代码并执行。&lt;/li&gt;
+    &lt;li&gt;常用来测试简单的代码，查询Matlab自带的函数，或者对正在运行的代码进行中断操作；或是在运行某些需要输入参数的代码时，也在命令窗口进行。&lt;/li&gt;
+    &lt;li&gt;换言之，通常情况下，是在编辑器当中去完成代码。
+&lt;strong&gt;工作空间&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;工作空间用于保存代码执行时的所有变量。&lt;/li&gt;
+    &lt;li&gt;查看–whos X（变量）class 函数 （询问），isa函数 (判断)&lt;/li&gt;
+    &lt;li&gt;保存工作空间中的变量 — save ws a b; 将变量a b保存到名为ws.mat 文件中&lt;/li&gt;
+    &lt;li&gt;清除— clear&lt;/li&gt;
+    &lt;li&gt;将保存的变量再次读取到工作空间中 load ws&lt;/li&gt;
+    &lt;li&gt;保存已经编写的代码 diary 函数 — diary off 终点
+&lt;strong&gt;编辑器&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;最重要！用于编写和调试Matlab代码，并将其保存为扩展名为”.m”的文件&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;2-编程语言&quot;&gt;2. 编程语言&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;变量&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;命名规则
+数据类型&lt;/li&gt;
+    &lt;li&gt;整型&lt;/li&gt;
+    &lt;li&gt;浮点型&lt;/li&gt;
+    &lt;li&gt;字符型&lt;/li&gt;
+    &lt;li&gt;逻辑型：用于判断一段语句是否正确&lt;/li&gt;
+    &lt;li&gt;结构体:可以包含多种不同的数据类型。如，实验中，记录被试的name，RT, accuracy； 
+操作如下：
+       Response.Name=‘Lulu’
+       Response.Time=240.5
+       Response.accuracy=0.98 
+      此时的Response 为一个结构体。[  ]&lt;/li&gt;
+    &lt;li&gt;元胞：{} 注意索引方式与结构体有差别&lt;/li&gt;
+    &lt;li&gt;cell的两种创建方式：指定陈述 &amp;amp; cell函数&lt;/li&gt;
+    &lt;li&gt;函数句柄：通常用于间接调用一个函数的取值或者数据类型。常用于作图过程中对图片的不同属性进行操作。
+矩阵基础&lt;/li&gt;
+    &lt;li&gt;矩阵通过[中括号]定义，一个中括号定义一个矩阵，区分列–n, and 空格; 区分列–;&lt;/li&gt;
+    &lt;li&gt;提取矩阵中的元素：采用矩阵索引，定位到要提取的元素所在的行，列即可。另外，还有采用”:”和”end”的方法。&lt;/li&gt;
+    &lt;li&gt;多维矩阵的定义： (行，列，页): 在每一页上去定义行、列。多维矩阵也可以用cat()串联函数进行构造
+矩阵运算&lt;/li&gt;
+    &lt;li&gt;加：“+” 两个矩阵内对应位置的元素值之和&lt;/li&gt;
+    &lt;li&gt;减：“-”&lt;/li&gt;
+    &lt;li&gt;乘法:“*” 服从矩阵相乘的规则 不是一一对应&lt;/li&gt;
+    &lt;li&gt;除: 左除(/)，右除()&lt;/li&gt;
+    &lt;li&gt;乘方：“^”&lt;/li&gt;
+    &lt;li&gt;转置：“‘”行列互换&lt;/li&gt;
+    &lt;li&gt;数组乘法（点乘）”.*” 两个矩阵中对应位置的元素点点相乘&lt;/li&gt;
+    &lt;li&gt;数组除法（左点除，右点除）点点相除&lt;/li&gt;
+    &lt;li&gt;数组乘方（点乘方）矩阵中的元素独立进行乘方运算&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;除了以上运算符，可以使用各运算对应的函数进行运算&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;关系运算：实则是矩阵中，各元素点对点的关系判断，返回的是逻辑变量0(假),1（真）&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;大于 &amp;gt;&lt;/li&gt;
+    &lt;li&gt;小于 &amp;lt;&lt;/li&gt;
+    &lt;li&gt;大于等于 &amp;gt;=&lt;/li&gt;
+    &lt;li&gt;小于等于&amp;lt;=&lt;/li&gt;
+    &lt;li&gt;== 等于&lt;/li&gt;
+    &lt;li&gt;~=不等于&lt;/li&gt;
+    &lt;li&gt;&amp;amp; 与&lt;/li&gt;
+    &lt;li&gt;
+      &lt;table&gt;
+        &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td&gt;或&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/li&gt;
+    &lt;li&gt;短路逻辑与（&amp;amp;&amp;amp;）逐个判断每个对象。一旦遇到某个对象是假，不再继续，直接返回假&lt;/li&gt;
+    &lt;li&gt;
+      &lt;table&gt;
+        &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td&gt;短路逻辑或（&lt;/td&gt;
+            &lt;td&gt; &lt;/td&gt;
+            &lt;td&gt;）逐个判断每个对象。一旦遇到某个对象是真，不再继续，直接返回真&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/li&gt;
+    &lt;li&gt;~ 非
+注意：计算有优先级&lt;/li&gt;
+    &lt;li&gt;（1）转置、乘方、数组乘方&lt;/li&gt;
+    &lt;li&gt;（2）逻辑非&lt;/li&gt;
+    &lt;li&gt;（3）矩阵乘除法、数组乘除法&lt;/li&gt;
+    &lt;li&gt;（4）矩阵加减法、数组加减法
+      &lt;h4 id=&quot;3matlab程序设计基础-程序的创建和程序的调试&quot;&gt;3.Matlab程序设计基础 （程序的创建和程序的调试）&lt;/h4&gt;
+      &lt;h5 id=&quot;1程序的创建&quot;&gt;1.程序的创建&lt;/h5&gt;
+      &lt;p&gt;程序的创建其实就是在新建一个m.文件，并在其中进行代码编写。快捷键：命令窗口中敲入: edit 即可打开编辑器。Matlab程序文件包括两种：m文件和函数function
+script :&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;脚本文件  和函数不同的是，脚本能够将程序中所定义的变量完整保存在工作空间，方便查看程序运行结果。&lt;/li&gt;
+    &lt;li&gt;通常用于编写单次使用的程序。
+function：是通过Matlab函数所要求的一定格式进行编写并保存的m文件；&lt;/li&gt;
+    &lt;li&gt;通过函数定义的变量，在函数运行结束后不会保存在工作空间中 。&lt;/li&gt;
+    &lt;li&gt;调用方便，通常用于编写多次使用的程序。
+&lt;strong&gt;永久性函数&lt;/strong&gt;：可以在编辑器中编写并保存，并可以在命令窗口和其他m文件中进行调用。通过function语句指引，格式为：&lt;/li&gt;
+    &lt;li&gt;function [out1,out2,…] = FunName(input1, input2, …)
+               % 注释说明部分 （函数中的注释部分，可以通过help指令显示出来）
+               函数体语句&lt;/li&gt;
+    &lt;li&gt;永久性函数的命名规则和变量名相同，最好和m文件名一致，并且必须保存在单一的m文件中。函数输出参数中提到的变量（e.g. Out1, out2…）要在函数体中予以赋值。自定义函数的编写要避面与系统自带的函数名重复。
+&lt;strong&gt;临时性函数&lt;/strong&gt;：包括内联函数（inline function）和匿名函数（anonymous function）后者效率更高。临时性函数常用于创建需要临时使用的简单函数。
+&lt;strong&gt;子函数&lt;/strong&gt;：当我们在编写函数的时候，可能会遇到需要在此函数脚本中调用一个固定程序（此时，该固定程序可以写为函数）。换言之，就是需要在函数中调用函数（可以是永久或是暂时，可以是Matlab自带，也可以是自定义的）。这时，该脚本本身的函数就是主函数，其他别调用来服务的，就是子函数。子函数可以被同一函数文件中的主函数和其他子函数调用：注意是同一函数文件！
+      &lt;ul&gt;
+        &lt;li&gt;在包含子函数的文件中，每个function要配一个end&lt;/li&gt;
+        &lt;li&gt;子函数的使用使得主函数变得清晰明朗。
+函数的递归： 函数自己调用自己 （注意陷入无限循环）
+          &lt;h5 id=&quot;2程序的调试-debug&quot;&gt;2.程序的调试 debug&lt;/h5&gt;
+          &lt;p&gt;简单的调试&lt;/p&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;脚本：逐句运行&lt;/li&gt;
+    &lt;li&gt;函数：(keyboard - return) 函数中的变量是不会存储到变量空间的，所以，需要在适当的地方加入keyboard指令，增加程序的交互性：程序运行到keyboard指令时会出现暂停，命令窗口出现提示符”K»”,此时我们可以查看和修改中间变量的取值。结束查看：输入return &amp;gt; enter 
+设置程序断点 breakpoint&lt;/li&gt;
+    &lt;li&gt;在脚本中，对应需要设置断点的行数，单击鼠标，会出现一个红点，表示断点位置。断点所在行的指令尚未执行。此时我们可以在工作空间中查看程序中变量的取值，也可以在命令窗口中输入指令以辅助调试代码，更重要的，这表明断点以前的代码能够正常运行。&lt;/li&gt;
+    &lt;li&gt;利用 breakpoint + step （对应图标）可以逐行运行代码。&lt;/li&gt;
+    &lt;li&gt;注意：修改代码之前需要退出断点调试，修改并保存后才可以重新开始调试。&lt;/li&gt;
+    &lt;li&gt;断点调试常用功能&lt;/li&gt;
+    &lt;li&gt;补充：清除所有断点，快捷键为： 命令窗口 dbclear all&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;4实验设计常用函数&quot;&gt;4.实验设计常用函数&lt;/h4&gt;
+
+&lt;p&gt;心理学实验设计编程通常需要的主要步骤：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;实验设计的试次；&lt;/li&gt;
+  &lt;li&gt;编写实验刺激&lt;/li&gt;
+  &lt;li&gt;呈现实验刺激&lt;/li&gt;
+  &lt;li&gt;输出实验结果&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;设计实验的trial ——随机函数&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;rand: 生成[0 1]之间均匀分布的浮点随机数&lt;/li&gt;
+    &lt;li&gt;rand(2,3)： 生成一个2*3的随机矩阵&lt;/li&gt;
+    &lt;li&gt;randi(n)：生成一个[1,n]之间均匀分布的随机整数&lt;/li&gt;
+    &lt;li&gt;randi(10,2,3): 生成一个范围在[1 10]的大小为2*3的随机整数矩阵&lt;/li&gt;
+    &lt;li&gt;randn：生成标准正态分布的随机数； randn(2,3): 生成2*3标准正态分布矩阵&lt;/li&gt;
+    &lt;li&gt;产生两组完全一样的随机数或者随机矩阵：设置随机数种子  rand (’seed’, seed)的使用。用于当实验要求不同的实验被试采用同样的实验trial顺序时。
+设计实验的trial——将序列进行随机排列&lt;/li&gt;
+    &lt;li&gt;randperm (n)函数 对1到n之间的正整数进行随机排列&lt;/li&gt;
+    &lt;li&gt;Shuffle 函数(这个是psychtoolbox的函数)：用于对数组或是矩阵排列，可用于对矩阵的每一列进行独立的随机排列 
+编写实验刺激&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;特殊矩阵生成方式&lt;/strong&gt;
+&lt;strong&gt;zeros&lt;/strong&gt; 
+&lt;strong&gt;ones&lt;/strong&gt;
+&lt;strong&gt;eye&lt;/strong&gt; 单位矩阵
+&lt;strong&gt;diag&lt;/strong&gt; 对角矩阵
+&lt;strong&gt;rand&lt;/strong&gt; 随机矩阵
+&lt;strong&gt;randn&lt;/strong&gt; 随机整数矩阵
+&lt;strong&gt;magic&lt;/strong&gt; 魔方矩阵&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;对矩阵进行计算的函数&lt;/strong&gt;
+&lt;strong&gt;abs&lt;/strong&gt;: 计算绝对值
+&lt;strong&gt;sin/sind&lt;/strong&gt;: 计算正弦函数值
+&lt;strong&gt;cos/cosd&lt;/strong&gt;: 计算余弦函数值
+&lt;strong&gt;tan/tand&lt;/strong&gt;：计算正切函数值
+&lt;strong&gt;round/floor/ceil&lt;/strong&gt;: 四舍五入取整 / 向负无穷方向取整/向正无穷方向取整
+&lt;strong&gt;min/max/mean/std&lt;/strong&gt;
+&lt;strong&gt;range&lt;/strong&gt; 计算极差
+&lt;strong&gt;sign&lt;/strong&gt;判断正负号
+&lt;strong&gt;注意&lt;/strong&gt;：&lt;/li&gt;
+    &lt;li&gt;sin/sind;cos/cosd 之类的函数，变量是角度还是弧度&lt;/li&gt;
+    &lt;li&gt;max(): max一个矩阵的时候，返回每一列的最大值；如果max一个向量，返回的是该行的最大值。二者结合，可以求整个矩阵的最大值max(max(A)) = max(A(: )): 冒号的作用是先将A中所有元素排成一列。mean（）函数也有类似用法。&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;对矩阵进行操作的函数&lt;/strong&gt;
+&lt;strong&gt;sort&lt;/strong&gt; 排序
+&lt;strong&gt;sortrows&lt;/strong&gt; 按照关键列进行排序
+&lt;strong&gt;rot90&lt;/strong&gt; 逆时针旋转
+…
+还有很多，需要的时候查阅
+&lt;strong&gt;呈现实验刺激——判断类函数&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;函数 isempty()， 是可以直接对变量是否为空值进行判断，返回逻辑值0或者1；
+&lt;strong&gt;输出实验结果——转化操作、路径和文件操作&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;（当需要根据不同的需求保存不同类型的数据，以及对于文件的保存路径和文件本身的操作时）：
+&lt;strong&gt;常见的转化操作函数&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;函数num2str(X, FORMAT), 此处format的格式规则，与之前的 sprintf() 类似&lt;/li&gt;
+    &lt;li&gt;函数int8() 特别适用在保存图片的时候&lt;/li&gt;
+    &lt;li&gt;常见的路径和文件操作函数：方便的存储和读取文件&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;</content><author><name>Lu Nie</name></author><category term="Psychotoolbox" /><category term="Experimental-Design" /><summary type="html">本系列旨在整理Matlab在认知神经科学中的应用</summary></entry></feed>

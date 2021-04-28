@@ -4,8 +4,8 @@ title: "Chapter1: Matlab 概述和编程基础"
 toc: ture
 date: 2019-10-30
 author: Lu Nie 
-category: Psychotoolbox 
-tags: Experimental-Design
+category: Experimental-Design
+tags: Psychotoolbox 
 ---
 本系列旨在整理Matlab在认知神经科学中的应用
 

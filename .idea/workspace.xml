@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39634c70-2917-4e86-88c4-dd4e012ab951" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_posts/2021-04-22-debug-GitHubPage.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2019-10-30-psychotoolbox-chapter-1.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2019-10-30-psychotoolbox-chapter-1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/categories/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/categories/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/feed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/feed.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/jekyll/2021/02/09/markdown.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/jekyll/2021/02/09/markdown.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/psychotoolbox/2019/10/30/psychotoolbox-chapter-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/tags/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/tags/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/troubleshooting/2021/03/18/debug-eeg-preproc-filter.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/troubleshooting/2021/03/18/debug-eeg-preproc-filter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/years/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/years/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +21,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1r3Hgsshv4HeytI96YxDkwqDzHi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -33,7 +50,7 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
-    <configuration>$PROJECT_DIR$/../.subversion</configuration>
+    <configuration>$USER_HOME$/.subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -51,7 +68,11 @@
       <workItem from="1619049183154" duration="20000" />
       <workItem from="1619049227448" duration="4394000" />
       <workItem from="1619053800974" duration="1147000" />
-      <workItem from="1619055422967" duration="739000" />
+      <workItem from="1619055422967" duration="1083000" />
+      <workItem from="1619181011694" duration="137000" />
+      <workItem from="1619181156955" duration="4114000" />
+      <workItem from="1619225352438" duration="2194000" />
+      <workItem from="1619596879504" duration="2705000" />
     </task>
     <servers />
   </component>
@@ -68,5 +89,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

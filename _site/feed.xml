@@ -1,4 +1,214 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2021-04-22T09:31:32+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Lu Nie Blog</title><subtitle>A Simple Personal Blog.</subtitle><author><name>Nie Lu</name></author><entry><title type="html">Troubleshooting: eeg滤波后波形怪异</title><link href="http://localhost:4000/troubleshooting/2021/03/18/debug-eeg-preproc-filter.html" rel="alternate" type="text/html" title="Troubleshooting: eeg滤波后波形怪异" /><published>2021-03-18T00:00:00+08:00</published><updated>2021-03-18T00:00:00+08:00</updated><id>http://localhost:4000/troubleshooting/2021/03/18/debug-eeg-preproc-filter</id><content type="html" xml:base="http://localhost:4000/troubleshooting/2021/03/18/debug-eeg-preproc-filter.html">&lt;p&gt;&lt;strong&gt;原因：&lt;/strong&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2021-04-28T17:08:19+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Lu Nie Blog</title><subtitle>A Simple Personal Blog.</subtitle><author><name>Nie Lu</name></author><entry><title type="html">心理学公共数据集整理(updated: 2021-04-28)</title><link href="http://localhost:4000/open-science/2021/04/28/open-science-datasets.html" rel="alternate" type="text/html" title="心理学公共数据集整理(updated: 2021-04-28)" /><published>2021-04-28T00:00:00+08:00</published><updated>2021-04-28T00:00:00+08:00</updated><id>http://localhost:4000/open-science/2021/04/28/open-science-datasets</id><content type="html" xml:base="http://localhost:4000/open-science/2021/04/28/open-science-datasets.html">&lt;p&gt;本文为心理学部分公共数据集汇总，整理自各大公众号、网站以及论文等地方。&lt;/p&gt;
+
+&lt;h4 id=&quot;eeg等电生理数据开放共享合集&quot;&gt;EEG等电生理数据开放共享合集&lt;/h4&gt;
+&lt;p&gt;@ &lt;a href=&quot;https://mp.weixin.qq.com/s/tEJAOWxmMw_aix9KRRFhBQ&quot;&gt;流浪星球&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;各种开放数据集&quot;&gt;各种开放数据集&lt;/h4&gt;
+&lt;p&gt;@ &lt;a href=&quot;https://mp.weixin.qq.com/s/AhoOr-35l9XTsa-Om4ae9Q&quot;&gt;行上行下&lt;/a&gt;
+@ &lt;a href=&quot;https://mp.weixin.qq.com/s/h3_Hc_maeooE3fAeT1cPYQ&quot;&gt;脑之说&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;eeg神经振荡分析已公开数据及代码共享&quot;&gt;EEG神经振荡分析：已公开数据及代码共享&lt;/h4&gt;
+&lt;p&gt;@ &lt;a href=&quot;https://mp.weixin.qq.com/s/_5TuTeVf3XgqQ1nKU6gDnw&quot;&gt;流浪星球&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;面孔材料和相关工具整理&quot;&gt;面孔材料和相关工具整理&lt;/h4&gt;
+&lt;p&gt;@ &lt;a href=&quot;https://mp.weixin.qq.com/s/n0suAqLt-0A1eosqTShdWA&quot;&gt;OpenScience&lt;/a&gt;&lt;/p&gt;</content><author><name>HUMAN BEING</name></author><category term="open-science" /><category term="datasets" /><summary type="html">本文为心理学部分公共数据集汇总，整理自各大公众号、网站以及论文等地方。</summary></entry><entry><title type="html">PsychoPy Install</title><link href="http://localhost:4000/experimental-design/2021/04/23/how-to-install-psychopy.html" rel="alternate" type="text/html" title="PsychoPy Install" /><published>2021-04-23T00:00:00+08:00</published><updated>2021-04-23T00:00:00+08:00</updated><id>http://localhost:4000/experimental-design/2021/04/23/how-to-install-psychopy</id><content type="html" xml:base="http://localhost:4000/experimental-design/2021/04/23/how-to-install-psychopy.html">&lt;p&gt;本文为心理学实验编写软件PsychoPy的安装和调试记录。&lt;/p&gt;
+
+&lt;h2 id=&quot;1-前情提要&quot;&gt;1 前情提要&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;操作系统&lt;/strong&gt;：macOS Catalina&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Anaconda Version&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Python Version&lt;/strong&gt;: 3.8.0&lt;/p&gt;
+
+&lt;h4 id=&quot;为什么要用psychpy&quot;&gt;为什么要用PsychPy&lt;/h4&gt;
+
+&lt;p&gt;因为新的实验设计需求，需要更加方便和细致的实验设计，PsychPy和PTB都是必学项目。不过Mac OS似乎对于PTB运行不太友好。遂尝试PsychoPy&lt;/p&gt;
+
+&lt;p&gt;其次，有许多学习材料，借助python发展的东风，也会很活跃。&lt;/p&gt;
+
+&lt;p&gt;更重要的是，基于Python, 开源免费&lt;/p&gt;
+
+&lt;h2 id=&quot;2-环境准备以及软件安装&quot;&gt;2 环境准备以及软件安装&lt;/h2&gt;
+
+&lt;h3 id=&quot;21-什么是安装环境&quot;&gt;2.1 什么是安装环境？&lt;/h3&gt;
+&lt;p&gt;虚拟环境可以理解为人们为了独立的开发不同的项目，因为很大可能不同项目使用到的包版本会有冲突，为了避免下载到同一个地方而报错，我们可以为不同的项目开发一块”净土”。&lt;/p&gt;
+
+&lt;p&gt;比如，虽然目前我的电脑Python版本为3.8, 而PsychoPy更加支持Python 3.6，因此之后我会使用Anaconda单独创建一个Python 3.6的虚拟环境&lt;/p&gt;
+
+&lt;p&gt;Anaconda中的conda可以理解为一个工具，核心功能就是进行包管理与环境管理。通过conda的一系列命令实现。&lt;/p&gt;
+
+&lt;h4 id=&quot;创建环境&quot;&gt;创建环境：&lt;/h4&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda create -n &amp;lt;envname&amp;gt; &amp;lt;python版本&amp;gt;
+conda create -n py2 python=2.7  #  创建python2.7版本的环境，命名为py2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;查看已安装环境&quot;&gt;查看已安装环境：&lt;/h4&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda env list # 查看已安装环境
+conda activate &amp;lt;env name&amp;gt; # 激活环境
+conda deactivate    # 退出当前环境
+conda install package_name(包名) # 安装包
+conda update conda  #检查更新 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;删除环境&quot;&gt;删除环境&lt;/h4&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda remove -n your_env_name(虚拟环境名称) --all  # 删除环境
+conda remove --name $your_env_name  $package_name（包名）  #删除环境中的具体包
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;生成环境&quot;&gt;生成环境：&lt;/h4&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda env export &amp;gt; environment.yml  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;切换环境&quot;&gt;切换环境：&lt;/h4&gt;
+&lt;p&gt;如果电脑中有多个环境，那么在需要使用某个具体环境时，一定要记得切换，不然会报错&lt;/p&gt;
+
+&lt;h4 id=&quot;查看已有环境&quot;&gt;查看已有环境：&lt;/h4&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda env list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;进行环境切换&quot;&gt;进行环境切换：&lt;/h4&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda activate XXX(环境名)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;22-安装&quot;&gt;2.2 安装&lt;/h3&gt;
+
+&lt;p&gt;有前辈推荐使用Anaconda来安装，避免pip的一些环境依赖问题；&lt;/p&gt;
+
+&lt;p&gt;方法一： Anaconda + environment file&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;官网&lt;/em&gt;&lt;/strong&gt;安装方式，仅列出，因为你懂的原因，无法下载官方提供的&lt;strong&gt;&lt;em&gt;environment file&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Download the environment file, open your terminal, navigate to the directory you saved the file to, and run:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda env create -n psychopy -f psychopy-env.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To activate the newly-created environment and run PsychoPy, exceute:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda activate psychopy
+psychopy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;方法二： Anaconda + creat environment file&lt;/p&gt;
+
+&lt;p&gt;此外，这里参照&lt;a href=&quot;https://mrswolf.github.io/zh-cn/2018/11/10/%EF%BC%88%E4%B8%80%EF%BC%89Psychopy%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/&quot;&gt;这篇文档&lt;/a&gt; 可以自己&lt;strong&gt;创建环境&lt;/strong&gt;并安装&lt;/p&gt;
+
+&lt;p&gt;在终端中创建环境文件&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda create -n psypy3 python=3.6
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;激活环境：&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda activate psypy3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;报错：&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CommandNotFoundError: Your shell has not been properly configured to use &apos;conda activate&apos;.
+To initialize your shell, run
+
+    $ conda init &amp;lt;SHELL_NAME&amp;gt;
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See &apos;conda init --help&apos; for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running &apos;conda init&apos;.
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;原因：当前使用的shell(zsh)没有配置好conda activate, 需要运行 conda init 初始化(一般首次激活会遇到这种情况)&lt;/p&gt;
+
+&lt;p&gt;解决：选择zsh&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda init zsh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;安装：&lt;/p&gt;
+
+&lt;p&gt;注意，此时终端一开始有显示(psypy3) 表明我们现在的操作均在刚刚创建的环境中进行。&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda install numpy scipy matplotlib pandas pyopengl pillow lxml openpyxl xlrd configobj pyyaml gevent greenlet msgpack-python psutil pytables requests[security] cffi seaborn wxpython cython pyzmq pyserial
+conda install -c conda-forge pyglet pysoundfile python-bidi moviepy pyosf
+pip3 install zmq json-tricks pyparallel sounddevice pygame pysoundcard psychopy_ext psychopy # 耐心等待吧
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;安装完毕检查：
+```import psychopy
+print(psychopy.&lt;strong&gt;version&lt;/strong&gt;)&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;该方法安装完毕后，能够print出version信息，但是无法打开软件：
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;cd [Psychopy_Source_Path] # 定位到安装路径
+python psychopyApp.py -b #打开builder
+#报错如下：
+No such file or directory: ‘/opt/anaconda3/envs/psypy3/bin/pythonw’: ‘/opt/anaconda3/envs/psypy3/bin/pythonw’&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;原因：暂未找到
+
+
+
+
+方法三：一键安装
+[官网封装包一键安装](https://www.psychopy.org/download.html#pip-install) 
+害，这个是最简单放便的方法！！
+
+安装完毕打开psychopy, coder显示的python版本号就是理想的version3.6
+
+方法四：pip
+1. 先使用conda创建python 3.6环境，然后在环境下pip3 install psychopy -- 安装完毕报错找不到路径
+2. 直接用[conda](https://anaconda.org/conda-forge/psychopy)安装：
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;在base环境下（即默认环境）
+conda install -c conda-forge psychopy  # 运行正常，只是coder对应的是python3.8&lt;/p&gt;
+&lt;h1 id=&quot;新建python36环境然后再重复&quot;&gt;新建python3.6环境，然后再重复&lt;/h1&gt;
+&lt;p&gt;conda install -c conda-forge psychopy   # 软件打不开，看起来还是环境文件的问题
+```&lt;/p&gt;
+
+&lt;p&gt;综上：使用封装好的dmg文件一键安装吧！！ 害！！&lt;/p&gt;
+
+&lt;h2 id=&quot;3-使用初体验&quot;&gt;3 使用初体验&lt;/h2&gt;
+
+&lt;p&gt;Psychopy提供两种刺激界面设计方式，一种是GUI界面Builder，另一种是普通的脚本编写方式Coder。Builder可以转换成code, 另外，builder可能更好实现实验的整合(某b站博主说的，没有验证过)。&lt;/p&gt;
+
+&lt;h3 id=&quot;31-builder&quot;&gt;3.1 Builder&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.psychopy.org/builder/builder.html&quot;&gt;使用文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;32-coder&quot;&gt;3.2 Coder&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.psychopy.org/coder/coder.html&quot;&gt;使用文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;推荐用pycharm编写&lt;/p&gt;
+
+&lt;h2 id=&quot;4-参考资料&quot;&gt;4 参考资料&lt;/h2&gt;
+&lt;p&gt;【1】&lt;a href=&quot;https://discourse.psychopy.org/&quot;&gt;Pychopy官方指导&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;【2】&lt;a href=&quot;http://www.psychopy.org/api/api.html&quot;&gt;PsychopyAPI手册&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;【3】&lt;a href=&quot;https://discourse.psychopy.org/&quot;&gt;PsychoPy论坛&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;【4】&lt;a href=&quot;https://pavlovia.org/docs/home/about&quot;&gt;exp-sources&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;【5】&lt;a href=&quot;https://www.bilibili.com/video/BV1n7411d7A3?from=search&amp;amp;seid=2641410729730121304&quot;&gt;指路b站&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;【6】&lt;a href=&quot;https://www.bilibili.com/video/BV1zW411C79Y?from=search&amp;amp;seid=2641410729730121304&quot;&gt;指路b站&lt;/a&gt;&lt;/p&gt;</content><author><name>Lu Nie</name></author><category term="Experimental-Design" /><category term="Python PsychoPy toolbox" /><summary type="html">本文为心理学实验编写软件PsychoPy的安装和调试记录。</summary></entry><entry><title type="html">Troubleshooting: GitHub Page 404</title><link href="http://localhost:4000/troubleshooting/2021/04/22/debug-GitHubPage.html" rel="alternate" type="text/html" title="Troubleshooting: GitHub Page 404" /><published>2021-04-22T00:00:00+08:00</published><updated>2021-04-22T00:00:00+08:00</updated><id>http://localhost:4000/troubleshooting/2021/04/22/debug-GitHubPage</id><content type="html" xml:base="http://localhost:4000/troubleshooting/2021/04/22/debug-GitHubPage.html">&lt;p&gt;解决GitHub page 404 以及 git pull 报错&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;BUG1:  There isn’t a GitHub Pages site here, 个人网站搭建好输入网址却找不到&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;原因：仓库个人网站设置没有打开，&lt;a href=&quot;https://zhuanlan.zhihu.com/p/91652100&quot;&gt;&lt;em&gt;点击参考&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;BUG2:  在使用git 对源代码进行push到gitHub时报错，如下：&lt;/p&gt;
+  &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;error: failed to push some refs to &apos;xxx(远程库)&apos;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+  &lt;p&gt;原因：README.md文件不在本地代码目录中，因为我是选择创建网站时自动生成README，而另外用了别的jekyll theme&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;解决：可以通过如下命令进行代码合并 – 没用&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git pull --rebase origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;解决： 直接一开始就创建新仓库，README.md 自己新建 — 有用
+&lt;a href=&quot;https://blog.csdn.net/qq_45893999/article/details/106273214?utm_medium=distribute.pc_feed_404.none-task-blog-2~default~BlogCommendFromBaidu~default-3.nonecase&amp;amp;dist_request_id=&amp;amp;depth_1-utm_source=distribute.pc_feed_404.none-task-blog-2~default~BlogCommendFromBaidu~default-3.nonecas&quot;&gt;&lt;em&gt;点击参考&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;</content><author><name>Lu Nie</name></author><category term="troubleshooting" /><category term="blog" /><summary type="html">解决GitHub page 404 以及 git pull 报错</summary></entry><entry><title type="html">Troubleshooting: eeg滤波后波形怪异</title><link href="http://localhost:4000/troubleshooting/2021/03/18/debug-eeg-preproc-filter.html" rel="alternate" type="text/html" title="Troubleshooting: eeg滤波后波形怪异" /><published>2021-03-18T00:00:00+08:00</published><updated>2021-03-18T00:00:00+08:00</updated><id>http://localhost:4000/troubleshooting/2021/03/18/debug-eeg-preproc-filter</id><content type="html" xml:base="http://localhost:4000/troubleshooting/2021/03/18/debug-eeg-preproc-filter.html">&lt;p&gt;&lt;strong&gt;原因：&lt;/strong&gt;
 0.1-30 Hz 的滤波，lower edge 和 higher edge 数字写反了！！&lt;/p&gt;
 
 &lt;p&gt;丢人！&lt;/p&gt;
@@ -532,7 +742,7 @@ Markdown 编写的文档可以导出 HTML、Word、图像、PDF、Epub 等多种
 &lt;p&gt;熟悉后，可以转战vscode，编写发表一体化。&lt;/p&gt;
 
 &lt;h1 id=&quot;参考资料-1&quot;&gt;参考资料&lt;/h1&gt;
-&lt;p&gt;【1】&lt;a href=&quot;https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown&quot;&gt;Cmd Markdown操作手册&lt;/a&gt;&lt;/p&gt;</content><author><name>-Lu Nie</name></author><category term="Jekyll" /><category term="jekyll" /><category term="markdown" /><summary type="html">本文整理一些markdown的常用语法，以用于编写博客。</summary></entry><entry><title type="html">Chapter1: Matlab 概述和编程基础</title><link href="http://localhost:4000/psychotoolbox/2019/10/30/psychotoolbox-chapter-1.html" rel="alternate" type="text/html" title="Chapter1: Matlab 概述和编程基础" /><published>2019-10-30T00:00:00+08:00</published><updated>2019-10-30T00:00:00+08:00</updated><id>http://localhost:4000/psychotoolbox/2019/10/30/psychotoolbox-chapter-1</id><content type="html" xml:base="http://localhost:4000/psychotoolbox/2019/10/30/psychotoolbox-chapter-1.html">&lt;p&gt;本系列旨在整理Matlab在认知神经科学中的应用&lt;/p&gt;
+&lt;p&gt;【1】&lt;a href=&quot;https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown&quot;&gt;Cmd Markdown操作手册&lt;/a&gt;&lt;/p&gt;</content><author><name>-Lu Nie</name></author><category term="Jekyll" /><category term="jekyll" /><category term="markdown" /><summary type="html">本文整理一些markdown的常用语法，以用于编写博客。</summary></entry><entry><title type="html">Chapter1: Matlab 概述和编程基础</title><link href="http://localhost:4000/experimental-design/2019/10/30/psychotoolbox-chapter-1.html" rel="alternate" type="text/html" title="Chapter1: Matlab 概述和编程基础" /><published>2019-10-30T00:00:00+08:00</published><updated>2019-10-30T00:00:00+08:00</updated><id>http://localhost:4000/experimental-design/2019/10/30/psychotoolbox-chapter-1</id><content type="html" xml:base="http://localhost:4000/experimental-design/2019/10/30/psychotoolbox-chapter-1.html">&lt;p&gt;本系列旨在整理Matlab在认知神经科学中的应用&lt;/p&gt;
 
 &lt;h4 id=&quot;1-编程环境&quot;&gt;1. 编程环境&lt;/h4&gt;
 &lt;blockquote&gt;
@@ -722,4 +932,4 @@ function：是通过Matlab函数所要求的一定格式进行编写并保存的
     &lt;li&gt;函数int8() 特别适用在保存图片的时候&lt;/li&gt;
     &lt;li&gt;常见的路径和文件操作函数：方便的存储和读取文件&lt;/li&gt;
   &lt;/ul&gt;
-&lt;/blockquote&gt;</content><author><name>Lu Nie</name></author><category term="Psychotoolbox" /><category term="Experimental-Design" /><summary type="html">本系列旨在整理Matlab在认知神经科学中的应用</summary></entry></feed>
+&lt;/blockquote&gt;</content><author><name>Lu Nie</name></author><category term="Experimental-Design" /><category term="Psychotoolbox" /><summary type="html">本系列旨在整理Matlab在认知神经科学中的应用</summary></entry></feed>
